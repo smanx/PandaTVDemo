@@ -29,14 +29,26 @@
     self.delegate = self;
     [self.controllerNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIViewController *vc = [[NSClassFromString(obj) alloc]init];
-        vc.view.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0 blue:arc4random() % 256 / 255.0 alpha:1];
+        vc.tabBarItem.image = [[UIImage imageNamed:self.normalImageNames[idx]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        vc.tabBarItem.selectedImage = [[UIImage imageNamed:self.selectedImageNames[idx]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kAppTintColor} forState:UIControlStateSelected];
+        
+        vc.view.backgroundColor = [UIColor whiteColor];
         vc.title = self.controllerTitles[idx];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        //nav.navigationBar.barTintColor = kAppTintColor;
+        nav.navigationBar.tintColor = kAppTintColor;
         [self addChildViewController:nav];
         
-        
+        if (idx == 0) {
+            _currentNavigationController = nav;
+        }
         
     }];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +80,7 @@
 -(NSArray *)normalImageNames
 {
     if (!_normalImageNames) {
-        _normalImageNames = @[@"第一页",@"第二页",@"第三页",@"第四页"];
+        _normalImageNames = @[@"home",@"column",@"live",@"user"];
     }
     return _normalImageNames;
 }
@@ -76,7 +88,7 @@
 -(NSArray *)selectedImageNames
 {
     if (!_selectedImageNames) {
-        _selectedImageNames = @[@"第一页",@"第二页",@"第三页",@"第四页"];
+        _selectedImageNames = @[@"home_pressed",@"column_pressed",@"live_pressed",@"user_select"];
     }
     return _selectedImageNames;
 }
@@ -103,4 +115,9 @@
     
 }
 
+- (void)dealloc
+{
+    
+    NSLog(@"tabbarController销毁了");
+}
 @end

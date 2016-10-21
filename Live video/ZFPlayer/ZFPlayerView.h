@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger, ZFPlayerLayerGravity) {
 /**
  *  player添加到cell上
  *
- *  @param cell 添加player的cellImageView
+ *   cell 添加player的cellImageView
  */
 - (void)addPlayerToCellImageView:(UIImageView *)imageView;
 
@@ -111,10 +111,10 @@ typedef NS_ENUM(NSInteger, ZFPlayerLayerGravity) {
 /**
  *  用于cell上播放player
  *
- *  @param videoURL  视频的URL
- *  @param tableView tableView
- *  @param indexPath indexPath 
- *  @param ImageViewTag ImageViewTag
+ *   videoURL  视频的URL
+ *   tableView tableView
+ *   indexPath indexPath
+ *   ImageViewTag ImageViewTag
  */
 - (void)setVideoURL:(NSURL *)videoURL
       withTableView:(UITableView *)tableView

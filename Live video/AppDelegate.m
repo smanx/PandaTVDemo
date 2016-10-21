@@ -8,11 +8,11 @@
 
 #import "AppDelegate.h"
 #import "BaseTabBarViewController.h"
-#import "MMDrawerController.h"
 #import "LeftSideDrawerController.h"
+
 #import "RightSideDrawerController.h"
 #import "MainViewController.h"
-
+#import "JPFPSStatus.h"
 @interface AppDelegate ()
 
 @end
@@ -25,31 +25,35 @@
     [self first];
 
     
+    
+    
+    
+    
+    
     return YES;
 }
 
 - (void)first
 {
+    
+    
     BaseTabBarViewController *ctrl = [[BaseTabBarViewController alloc]init];
-    self.window.rootViewController = ctrl;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        CATransition *anim = [CATransition animation];
+        anim.type = @"rippleEffect";
+        anim.duration = 1.5f;
+        [[UIApplication sharedApplication].keyWindow.layer addAnimation:anim forKey:nil];
+        
+        self.window.rootViewController = ctrl;
+        [[JPFPSStatus sharedInstance] open];
+    });
+    
+    
 }
 
-- (void)first2
-{
-    LeftSideDrawerController * leftDrawer = [[LeftSideDrawerController alloc] init];
-    
-    RightSideDrawerController * rightDrawer = [[RightSideDrawerController alloc] init];
-    
-    BaseTabBarViewController *centerController = [[BaseTabBarViewController alloc]init];
-    MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:centerController
-                                             leftDrawerViewController:leftDrawer
-                                             rightDrawerViewController:rightDrawer];
-    
-    drawerController.view.backgroundColor = [UIColor whiteColor];
-    
-    self.window.rootViewController = drawerController;
-}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

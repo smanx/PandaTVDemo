@@ -32,7 +32,7 @@
 - (void)requstDataFromeNetworking
 {
     
-    [SVProgressHUD showWithStatus:@"正在加载"];
+    //[SVProgressHUD showWithStatus:@"正在加载"];
     [[AFHTTPSessionManager manager]GET:kPandaClassUrlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         _dataSource = responseObject[@"data"];
         [self collectionView];

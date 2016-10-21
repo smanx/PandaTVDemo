@@ -400,7 +400,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     _viewY = self.viewFrame.origin.y;
     if (CGRectEqualToRect(self.viewFrame, CGRectZero)) {
         _viewWidth = self.view.frame.size.width;
-# warning 自己改了
+// 自己改了
         _viewHeight = self.view.frame.size.height;// - self.menuHeight - self.menuViewBottomSpace - navigationHeight - tarBarHeight;
         _viewY += navigationHeight;
     } else {
@@ -652,7 +652,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     // It's not my expectation, so I use `_shouldNotScroll` to lock it.
     // Wait for a better solution.
     _shouldNotScroll = YES;
-#warning 自改了
+// 自改了
     CGRect scrollFrame = CGRectMake(_viewX, 0, _viewWidth, _viewHeight);
     //CGRect scrollFrame = CGRectMake(_viewX, _viewY + self.menuHeight + self.menuViewBottomSpace, _viewWidth, _viewHeight);
     CGFloat oldContentOffsetX = self.scrollView.contentOffset.x;

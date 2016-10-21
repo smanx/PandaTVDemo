@@ -19,22 +19,38 @@
 -(void)cellWithModel:(PandaADModel *)model cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.items[indexPath.item][@"pictures"][@"img"]]placeholderImage:[UIImage imageNamed:@"egopv_photo_placeholder"]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.items[indexPath.item][@"pictures"][@"img"]]placeholderImage:[UIImage sd_animatedGIFNamed:@"loading"]];
     
     self.titleLabel.text = model.items[indexPath.item][@"name"];
     self.nickNameLabel.text = model.items[indexPath.item][@"userinfo"][@"nickName"];
-    self.personNumberLabel.text = model.items[indexPath.item][@"person_num"];
+    
+    NSString *string = model.items[indexPath.item][@"person_num"];
+    CGFloat personNumber = [string floatValue];
+    if (personNumber > 9999) {
+        personNumber /= 10000;
+        string = [NSString stringWithFormat:@"%0.1f万",personNumber];
+    }
+    string = [NSString stringWithFormat:@"👁%@",string];
+    self.personNumberLabel.text = string;
     
     [self layoutWithIndexPath:indexPath];
 }
 
 -(void)cellWithWithDict:(NSDictionary *)dict cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"pictures"][@"img"]]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"pictures"][@"img"]]placeholderImage:[UIImage sd_animatedGIFNamed:@"loading"]];
     self.titleLabel.text = dict[@"name"];
     self.nickNameLabel.text = dict[@"userinfo"][@"nickName"];
-    self.personNumberLabel.text = dict[@"person_num"];
     
+    NSString *string = dict[@"person_num"];
+
+    CGFloat personNumber = [string floatValue];
+    if (personNumber > 9999) {
+        personNumber /= 10000;
+        string = [NSString stringWithFormat:@"%0.1f万",personNumber];
+    }
+    string = [NSString stringWithFormat:@"👁%@",string];
+    self.personNumberLabel.text = string;
     
     [self layoutWithIndexPath:indexPath];
     

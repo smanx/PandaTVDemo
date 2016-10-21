@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590B107B1DB774D50061960A /* JPFPSStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 590B107A1DB774D50061960A /* JPFPSStatus.m */; };
 		591598971DB0DB6600BB78E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 591598961DB0DB6600BB78E9 /* main.m */; };
 		5915989A1DB0DB6600BB78E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 591598991DB0DB6600BB78E9 /* AppDelegate.m */; };
 		5915989D1DB0DB6600BB78E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5915989C1DB0DB6600BB78E9 /* ViewController.m */; };
@@ -67,7 +68,6 @@
 		591599B71DB0DDCF00BB78E9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599B61DB0DDCF00BB78E9 /* MainViewController.m */; };
 		591599BA1DB0DDDD00BB78E9 /* SencondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599B91DB0DDDD00BB78E9 /* SencondViewController.m */; };
 		591599BD1DB0DDE800BB78E9 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599BC1DB0DDE800BB78E9 /* ThirdViewController.m */; };
-		591599C01DB0DDF200BB78E9 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599BF1DB0DDF200BB78E9 /* FourthViewController.m */; };
 		59159A001DB0EC0C00BB78E9 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599D41DB0EC0B00BB78E9 /* MJRefreshAutoFooter.m */; };
 		59159A011DB0EC0C00BB78E9 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599D61DB0EC0B00BB78E9 /* MJRefreshBackFooter.m */; };
 		59159A021DB0EC0C00BB78E9 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 591599D81DB0EC0B00BB78E9 /* MJRefreshComponent.m */; };
@@ -114,16 +114,21 @@
 		597DEEF91DB5AB2300533B33 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 597DEEEE1DB5AB2300533B33 /* JSONKeyMapper.m */; };
 		597DEEFA1DB5AB2300533B33 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 597DEEF01DB5AB2300533B33 /* JSONValueTransformer.m */; };
 		5981BBB91DB38EB60085A83F /* ClassListCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981BBB81DB38EB60085A83F /* ClassListCollectionController.m */; };
+		59C38A581DB84D2800B533AB /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C38A571DB84D2800B533AB /* BOZPongRefreshControl.m */; };
+		59C38CDB1DB8B56C00B533AB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C38CD91DB8B56C00B533AB /* FourthViewController.m */; };
+		59C38CE01DB8B6AA00B533AB /* MeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C38CDE1DB8B6AA00B533AB /* MeTableViewCell.m */; };
+		59C38CE11DB8B6AA00B533AB /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C38CDF1DB8B6AA00B533AB /* MeTableViewCell.xib */; };
+		59C38CE41DB8C3CA00B533AB /* MeUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C38CE31DB8C3CA00B533AB /* MeUserView.m */; };
+		59C38CE71DB8E31200B533AB /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C38CE61DB8E31200B533AB /* SearchViewController.m */; };
 		59C63C0E1DB1FDE5004D5646 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C63C0D1DB1FDE5004D5646 /* iCarousel.m */; };
 		59C63C1A1DB2229B004D5646 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C63C141DB2229B004D5646 /* ZYBannerCell.m */; };
 		59C63C1B1DB2229B004D5646 /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C63C161DB2229B004D5646 /* ZYBannerFooter.m */; };
 		59C63C1C1DB2229B004D5646 /* ZYBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59C63C171DB2229B004D5646 /* ZYBannerView.bundle */; };
 		59C63C1D1DB2229B004D5646 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C63C191DB2229B004D5646 /* ZYBannerView.m */; };
 		59C63C201DB225FD004D5646 /* PandaPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C63C1F1DB225FD004D5646 /* PandaPlayerController.m */; };
-		6239C8731DB257D800EE90C9 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C86B1DB257D800EE90C9 /* MMDrawerBarButtonItem.m */; };
-		6239C8741DB257D800EE90C9 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C86E1DB257D800EE90C9 /* MMDrawerController.m */; };
-		6239C8751DB257D800EE90C9 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C8701DB257D800EE90C9 /* MMDrawerVisualState.m */; };
-		6239C8761DB257D800EE90C9 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C8721DB257D800EE90C9 /* UIViewController+MMDrawerController.m */; };
+		59F171BF1DB65E8F000082FE /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59F171BE1DB65E8F000082FE /* loading.gif */; };
+		59F176531DB73D93000082FE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F176521DB73D93000082FE /* libz.tbd */; };
+		59F176551DB73DA0000082FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F176541DB73DA0000082FE /* libsqlite3.tbd */; };
 		6239C87C1DB25D6200EE90C9 /* LeftSideDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C87B1DB25D6200EE90C9 /* LeftSideDrawerController.m */; };
 		6239C87F1DB25D7A00EE90C9 /* RightSideDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C87E1DB25D7A00EE90C9 /* RightSideDrawerController.m */; };
 		6239C8861DB27C1E00EE90C9 /* PandaMainCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6239C8841DB27C1E00EE90C9 /* PandaMainCollectionCell.m */; };
@@ -156,6 +161,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590B10791DB774D50061960A /* JPFPSStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFPSStatus.h; sourceTree = "<group>"; };
+		590B107A1DB774D50061960A /* JPFPSStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFPSStatus.m; sourceTree = "<group>"; };
 		591598921DB0DB6600BB78E9 /* PandaTVDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PandaTVDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		591598961DB0DB6600BB78E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		591598981DB0DB6600BB78E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -284,8 +291,6 @@
 		591599B91DB0DDDD00BB78E9 /* SencondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SencondViewController.m; sourceTree = "<group>"; };
 		591599BB1DB0DDE800BB78E9 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		591599BC1DB0DDE800BB78E9 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		591599BE1DB0DDF200BB78E9 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
-		591599BF1DB0DDF200BB78E9 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		591599D01DB0E1E400BB78E9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		591599D31DB0EC0B00BB78E9 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		591599D41DB0EC0B00BB78E9 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -379,6 +384,17 @@
 		597DEEF01DB5AB2300533B33 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		5981BBB71DB38EB60085A83F /* ClassListCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassListCollectionController.h; sourceTree = "<group>"; };
 		5981BBB81DB38EB60085A83F /* ClassListCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListCollectionController.m; sourceTree = "<group>"; };
+		59C38A561DB84D2800B533AB /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
+		59C38A571DB84D2800B533AB /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
+		59C38CD81DB8B56C00B533AB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		59C38CD91DB8B56C00B533AB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		59C38CDD1DB8B6AA00B533AB /* MeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewCell.h; sourceTree = "<group>"; };
+		59C38CDE1DB8B6AA00B533AB /* MeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewCell.m; sourceTree = "<group>"; };
+		59C38CDF1DB8B6AA00B533AB /* MeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
+		59C38CE21DB8C3CA00B533AB /* MeUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeUserView.h; sourceTree = "<group>"; };
+		59C38CE31DB8C3CA00B533AB /* MeUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeUserView.m; sourceTree = "<group>"; };
+		59C38CE51DB8E31200B533AB /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		59C38CE61DB8E31200B533AB /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		59C63C0C1DB1FDE5004D5646 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		59C63C0D1DB1FDE5004D5646 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		59C63C131DB2229B004D5646 /* ZYBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerCell.h; sourceTree = "<group>"; };
@@ -390,15 +406,9 @@
 		59C63C191DB2229B004D5646 /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
 		59C63C1E1DB225FD004D5646 /* PandaPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaPlayerController.h; sourceTree = "<group>"; };
 		59C63C1F1DB225FD004D5646 /* PandaPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaPlayerController.m; sourceTree = "<group>"; };
-		6239C86A1DB257D800EE90C9 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		6239C86B1DB257D800EE90C9 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		6239C86C1DB257D800EE90C9 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		6239C86D1DB257D800EE90C9 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		6239C86E1DB257D800EE90C9 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
-		6239C86F1DB257D800EE90C9 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
-		6239C8701DB257D800EE90C9 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		6239C8711DB257D800EE90C9 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		6239C8721DB257D800EE90C9 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		59F171BE1DB65E8F000082FE /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		59F176521DB73D93000082FE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		59F176541DB73DA0000082FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6239C87A1DB25D6200EE90C9 /* LeftSideDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideDrawerController.h; sourceTree = "<group>"; };
 		6239C87B1DB25D6200EE90C9 /* LeftSideDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideDrawerController.m; sourceTree = "<group>"; };
 		6239C87D1DB25D7A00EE90C9 /* RightSideDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSideDrawerController.h; sourceTree = "<group>"; };
@@ -426,6 +436,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F176551DB73DA0000082FE /* libsqlite3.tbd in Frameworks */,
+				59F176531DB73D93000082FE /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +458,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590B10781DB774D50061960A /* JPFPSStatus */ = {
+			isa = PBXGroup;
+			children = (
+				590B10791DB774D50061960A /* JPFPSStatus.h */,
+				590B107A1DB774D50061960A /* JPFPSStatus.m */,
+			);
+			path = JPFPSStatus;
+			sourceTree = "<group>";
+		};
 		591598891DB0DB6600BB78E9 = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +474,7 @@
 				591598B11DB0DB6600BB78E9 /* Live videoTests */,
 				591598BC1DB0DB6600BB78E9 /* Live videoUITests */,
 				591598931DB0DB6600BB78E9 /* Products */,
+				59F176511DB73D93000082FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -493,6 +515,7 @@
 		591598951DB0DB6600BB78E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59F171BE1DB65E8F000082FE /* loading.gif */,
 				591598961DB0DB6600BB78E9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -519,11 +542,12 @@
 		591598CB1DB0DB8700BB78E9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				59C38A551DB84D2800B533AB /* BOZPongRefreshControl */,
+				590B10781DB774D50061960A /* JPFPSStatus */,
 				597DEEDB1DB5AB2300533B33 /* JSONModel */,
 				593490921DB48D41002F675D /* WMPageController */,
 				5974F4021DB379A300DB93B9 /* CHTCollectionViewWaterfallLayout */,
 				5974F3FC1DB3766500DB93B9 /* WMPlayer */,
-				6239C8691DB257D800EE90C9 /* MMDrawerController */,
 				59C63C121DB2229B004D5646 /* ZYBannerView */,
 				59C63C0B1DB1FDE5004D5646 /* iCarousel */,
 				59159A191DB104C500BB78E9 /* SVProgressHUD */,
@@ -712,8 +736,6 @@
 				591599B91DB0DDDD00BB78E9 /* SencondViewController.m */,
 				591599BB1DB0DDE800BB78E9 /* ThirdViewController.h */,
 				591599BC1DB0DDE800BB78E9 /* ThirdViewController.m */,
-				591599BE1DB0DDF200BB78E9 /* FourthViewController.h */,
-				591599BF1DB0DDF200BB78E9 /* FourthViewController.m */,
 				6239C87A1DB25D6200EE90C9 /* LeftSideDrawerController.h */,
 				6239C87B1DB25D6200EE90C9 /* LeftSideDrawerController.m */,
 				6239C87D1DB25D7A00EE90C9 /* RightSideDrawerController.h */,
@@ -722,6 +744,10 @@
 				5981BBB81DB38EB60085A83F /* ClassListCollectionController.m */,
 				59C63C1E1DB225FD004D5646 /* PandaPlayerController.h */,
 				59C63C1F1DB225FD004D5646 /* PandaPlayerController.m */,
+				59C38CD81DB8B56C00B533AB /* FourthViewController.h */,
+				59C38CD91DB8B56C00B533AB /* FourthViewController.m */,
+				59C38CE51DB8E31200B533AB /* SearchViewController.h */,
+				59C38CE61DB8E31200B533AB /* SearchViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -854,6 +880,11 @@
 				5974F4081DB37A5000DB93B9 /* PandaClassCell.h */,
 				5974F4091DB37A5000DB93B9 /* PandaClassCell.m */,
 				5974F40A1DB37A5000DB93B9 /* PandaClassCell.xib */,
+				59C38CDD1DB8B6AA00B533AB /* MeTableViewCell.h */,
+				59C38CDE1DB8B6AA00B533AB /* MeTableViewCell.m */,
+				59C38CDF1DB8B6AA00B533AB /* MeTableViewCell.xib */,
+				59C38CE21DB8C3CA00B533AB /* MeUserView.h */,
+				59C38CE31DB8C3CA00B533AB /* MeUserView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -996,6 +1027,15 @@
 			name = PandaMainController;
 			sourceTree = "<group>";
 		};
+		59C38A551DB84D2800B533AB /* BOZPongRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				59C38A561DB84D2800B533AB /* BOZPongRefreshControl.h */,
+				59C38A571DB84D2800B533AB /* BOZPongRefreshControl.m */,
+			);
+			path = BOZPongRefreshControl;
+			sourceTree = "<group>";
+		};
 		59C63C0B1DB1FDE5004D5646 /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,20 +1059,13 @@
 			path = ZYBannerView;
 			sourceTree = "<group>";
 		};
-		6239C8691DB257D800EE90C9 /* MMDrawerController */ = {
+		59F176511DB73D93000082FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6239C86A1DB257D800EE90C9 /* MMDrawerBarButtonItem.h */,
-				6239C86B1DB257D800EE90C9 /* MMDrawerBarButtonItem.m */,
-				6239C86C1DB257D800EE90C9 /* MMDrawerController+Subclass.h */,
-				6239C86D1DB257D800EE90C9 /* MMDrawerController.h */,
-				6239C86E1DB257D800EE90C9 /* MMDrawerController.m */,
-				6239C86F1DB257D800EE90C9 /* MMDrawerVisualState.h */,
-				6239C8701DB257D800EE90C9 /* MMDrawerVisualState.m */,
-				6239C8711DB257D800EE90C9 /* UIViewController+MMDrawerController.h */,
-				6239C8721DB257D800EE90C9 /* UIViewController+MMDrawerController.m */,
+				59F176541DB73DA0000082FE /* libsqlite3.tbd */,
+				59F176521DB73D93000082FE /* libz.tbd */,
 			);
-			path = MMDrawerController;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1149,12 +1182,14 @@
 				5974F40C1DB37A5000DB93B9 /* PandaClassCell.xib in Resources */,
 				6239C8A01DB28B7500EE90C9 /* PandaHeaderReusable.xib in Resources */,
 				591598A81DB0DB6600BB78E9 /* LaunchScreen.storyboard in Resources */,
+				59C38CE11DB8B6AA00B533AB /* MeTableViewCell.xib in Resources */,
 				5974F4001DB3766500DB93B9 /* WMPlayer.bundle in Resources */,
 				59159A261DB104C500BB78E9 /* SVProgressHUD.bundle in Resources */,
 				591598A51DB0DB6600BB78E9 /* Assets.xcassets in Resources */,
 				6239C89B1DB28B5800EE90C9 /* PandaFooterReusableView.xib in Resources */,
 				6239C88C1DB27C3E00EE90C9 /* PandaMainCollectionReusableView.xib in Resources */,
 				591598A01DB0DB6600BB78E9 /* Main.storyboard in Resources */,
+				59F171BF1DB65E8F000082FE /* loading.gif in Resources */,
 				59159A0E1DB0EC0C00BB78E9 /* MJRefresh.bundle in Resources */,
 				5915999E1DB0DC4D00BB78E9 /* ZFPlayer.bundle in Resources */,
 			);
@@ -1198,18 +1233,22 @@
 				591599BA1DB0DDDD00BB78E9 /* SencondViewController.m in Sources */,
 				59159A061DB0EC0C00BB78E9 /* MJRefreshAutoNormalFooter.m in Sources */,
 				59159A131DB0EC0C00BB78E9 /* UIView+MJExtension.m in Sources */,
+				59C38A581DB84D2800B533AB /* BOZPongRefreshControl.m in Sources */,
 				5974F4051DB379A300DB93B9 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				5915999B1DB0DC4D00BB78E9 /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				5934909F1DB48D41002F675D /* WMMenuItem.m in Sources */,
 				6239C89F1DB28B7500EE90C9 /* PandaHeaderReusable.m in Sources */,
+				59C38CE71DB8E31200B533AB /* SearchViewController.m in Sources */,
 				591599831DB0DC2000BB78E9 /* TMMemoryCache.m in Sources */,
 				593490A01DB48D41002F675D /* WMMenuView.m in Sources */,
+				590B107B1DB774D50061960A /* JPFPSStatus.m in Sources */,
 				5915989D1DB0DB6600BB78E9 /* ViewController.m in Sources */,
 				591598A31DB0DB6600BB78E9 /* Live_video.xcdatamodeld in Sources */,
 				591599BD1DB0DDE800BB78E9 /* ThirdViewController.m in Sources */,
 				5915994D1DB0DC1F00BB78E9 /* AFHTTPSessionManager.m in Sources */,
 				59159A0A1DB0EC0C00BB78E9 /* MJRefreshBackStateFooter.m in Sources */,
 				597DEEF81DB5AB2300533B33 /* JSONModel+networking.m in Sources */,
+				59C38CE01DB8B6AA00B533AB /* MeTableViewCell.m in Sources */,
 				59159A031DB0EC0C00BB78E9 /* MJRefreshFooter.m in Sources */,
 				6239C88B1DB27C3E00EE90C9 /* PandaMainCollectionReusableView.m in Sources */,
 				6239C8A31DB2900300EE90C9 /* PandaMainListViewModel.m in Sources */,
@@ -1219,17 +1258,15 @@
 				591599741DB0DC2000BB78E9 /* SDWebImageCompat.m in Sources */,
 				591599991DB0DC4D00BB78E9 /* ASValueTrackingSlider.m in Sources */,
 				59159A0D1DB0EC0C00BB78E9 /* MJRefreshStateHeader.m in Sources */,
+				59C38CDB1DB8B56C00B533AB /* FourthViewController.m in Sources */,
 				597DEEF51DB5AB2300533B33 /* JSONModelError.m in Sources */,
 				591599981DB0DC4D00BB78E9 /* ASValuePopUpView.m in Sources */,
 				591599B01DB0DD5000BB78E9 /* BaseModel.m in Sources */,
-				6239C8731DB257D800EE90C9 /* MMDrawerBarButtonItem.m in Sources */,
 				591599781DB0DC2000BB78E9 /* SDWebImageManager.m in Sources */,
-				6239C8761DB257D800EE90C9 /* UIViewController+MMDrawerController.m in Sources */,
 				591599571DB0DC1F00BB78E9 /* MASViewAttribute.m in Sources */,
 				59159A0F1DB0EC0C00BB78E9 /* MJRefreshConst.m in Sources */,
 				591599811DB0DC2000BB78E9 /* TMCache.m in Sources */,
 				591599731DB0DC2000BB78E9 /* SDImageCache.m in Sources */,
-				6239C8751DB257D800EE90C9 /* MMDrawerVisualState.m in Sources */,
 				59C63C0E1DB1FDE5004D5646 /* iCarousel.m in Sources */,
 				59159A271DB104C500BB78E9 /* SVProgressHUD.m in Sources */,
 				5981BBB91DB38EB60085A83F /* ClassListCollectionController.m in Sources */,
@@ -1261,7 +1298,6 @@
 				59159A041DB0EC0C00BB78E9 /* MJRefreshHeader.m in Sources */,
 				591599A01DB0DC4D00BB78E9 /* ZFPlayerView.m in Sources */,
 				5915997D1DB0DC2000BB78E9 /* UIImage+WebP.m in Sources */,
-				6239C8741DB257D800EE90C9 /* MMDrawerController.m in Sources */,
 				591599AC1DB0DD3500BB78E9 /* BaseTabBarViewController.m in Sources */,
 				59159A071DB0EC0C00BB78E9 /* MJRefreshAutoStateFooter.m in Sources */,
 				59C63C1A1DB2229B004D5646 /* ZYBannerCell.m in Sources */,
@@ -1276,7 +1312,6 @@
 				59159A241DB104C500BB78E9 /* SVIndefiniteAnimatedView.m in Sources */,
 				5915997B1DB0DC2000BB78E9 /* UIImage+GIF.m in Sources */,
 				591599561DB0DC1F00BB78E9 /* MASLayoutConstraint.m in Sources */,
-				591599C01DB0DDF200BB78E9 /* FourthViewController.m in Sources */,
 				59159A2B1DB1B54B00BB78E9 /* PandaADModel.m in Sources */,
 				591599711DB0DC1F00BB78E9 /* MKAnnotationView+WebCache.m in Sources */,
 				6239C89A1DB28B5800EE90C9 /* PandaFooterReusableView.m in Sources */,
@@ -1285,6 +1320,7 @@
 				5915999C1DB0DC4D00BB78E9 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				59159A091DB0EC0C00BB78E9 /* MJRefreshBackNormalFooter.m in Sources */,
 				5915999F1DB0DC4D00BB78E9 /* ZFPlayerControlView.m in Sources */,
+				59C38CE41DB8C3CA00B533AB /* MeUserView.m in Sources */,
 				591599771DB0DC2000BB78E9 /* SDWebImageDownloaderOperation.m in Sources */,
 				5915994E1DB0DC1F00BB78E9 /* AFNetworkReachabilityManager.m in Sources */,
 				5915997F1DB0DC2000BB78E9 /* UIImageView+WebCache.m in Sources */,
@@ -1441,10 +1477,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 367AMTMXH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Live video/PrefixHeader.pch";
 				INFOPLIST_FILE = "Live video/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cc.Live-video";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1455,10 +1493,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 367AMTMXH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Live video/PrefixHeader.pch";
 				INFOPLIST_FILE = "Live video/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cc.Live-video";
 				PRODUCT_NAME = "$(TARGET_NAME)";

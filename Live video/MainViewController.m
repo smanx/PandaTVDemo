@@ -12,37 +12,62 @@
 #import "UIImageView+WebCache.h"
 #import "ZYBannerView.h"
 #import "PandaPlayerController.h"
-#import "UIViewController+MMDrawerController.h"
 #import "PandaMainCollectionCell.h"
 #import "PandaMainCollectionReusableView.h"
 #import "PandaHeaderReusable.h"
 #import "PandaFooterReusableView.h"
+#import "BaseTabBarViewController.h"
+#import "BOZPongRefreshControl.h"
+#import "ClassListCollectionController.h"
+#import "SearchViewController.h"
 @interface MainViewController () <ZYBannerViewDataSource,ZYBannerViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+
 @property (nonatomic,strong)NSArray *dataSource;
 @property (nonatomic,strong)NSArray *dataListSource;
 @property (nonatomic,strong)ZYBannerView *bannerView;
 @property (nonatomic,weak)UICollectionView *collectionView;
+@property (nonatomic,weak)UIImageView *backgroundGifView;
+@property (nonatomic,strong)BOZPongRefreshControl *pongRefreshControl;
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [SVProgressHUD showWithStatus:@"正在加载"];
+    //[SVProgressHUD showWithStatus:@"正在加载"];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self requestADViewNetworkingWithUrlString:kPandaMainViewADViewUrlString];
     [self requestADViewNetworkingWithUrlString:kPandaMainListUrlString];
     
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.bounds = CGRectMake(0, 0, 20, 20);
+    [leftButton setImage:[UIImage imageNamed:@"btn_refresh_bar_hover"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonClick)];
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightButton.bounds = CGRectMake(0, 0, 22, 22);
+    [rightButton setImage:[UIImage imageNamed:@"shouye_icon_search_2"] forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClick)];
+    
+    
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    
+    [self backgroundGifView];
+    //[self pongRefreshControl];
+    
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home_banner_bg"]];
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -78,6 +103,7 @@
         
         [self.view addSubview:collection];
         
+        
         _collectionView = collection;
     }
     return _collectionView;
@@ -109,8 +135,11 @@
         UICollectionReusableView *reusable  = nil;
         if (indexPath.section == 0) {
             PandaMainCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"PandaMainCollectionReusableView" forIndexPath:indexPath];
+
+            
             [headerView cellWithDataSource:_dataListSource indexPath:indexPath];
             [headerView addSubview:self.bannerView];
+            [self.backgroundGifView removeFromSuperview];
             reusable = headerView;
         }
         else
@@ -118,6 +147,23 @@
             PandaHeaderReusable *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kCollectionElementKindSectionHeader forIndexPath:indexPath];
             [headerView cellWithDataSource:_dataListSource indexPath:indexPath];
             reusable = headerView;
+            __weak MainViewController *weakSelf = self;
+            headerView.backToController = ^(NSDictionary *dict)
+            {
+                CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc]init];
+                layout.minimumInteritemSpacing = 1;
+                layout.minimumColumnSpacing = 1;
+                layout.sectionInset = UIEdgeInsetsMake(1, 1, 1, 1);
+                layout.columnCount = 2;
+                
+                
+                ClassListCollectionController *vc = [[ClassListCollectionController alloc]initWithCollectionViewLayout:layout andDict:dict];
+                [weakSelf.navigationController pushViewController:vc animated:YES];
+                
+                [SVProgressHUD showWithStatus:@"正在加载"];
+            };
+            
+            
         }
         
         reusableView = reusable;
@@ -135,6 +181,14 @@
     
     return reusableView;
 }
+
+
+
+- (void)enterToClass:(NSDictionary *)dict
+{
+    
+}
+
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -175,16 +229,25 @@
 
 - (void)leftButtonClick
 {
-    [SVProgressHUD showInfoWithStatus:@"leftButtonClick"];
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    //[self.mm_drawerController bouncePreviewForDrawerSide:MMDrawerSideLeft completion:nil];
+    CATransition *anim = [CATransition animation];
+    
+    anim.type = @"rippleEffect";
+    
+    anim.duration = 1.5f;
+    
+    [[UIApplication sharedApplication].keyWindow.layer addAnimation:anim forKey:nil];
+    [UIApplication sharedApplication].keyWindow.rootViewController = [[BaseTabBarViewController alloc]init];
+    
+    [[SDImageCache sharedImageCache]cleanDisk];
+    [[SDImageCache sharedImageCache]clearDisk];
+    [[SDImageCache sharedImageCache]clearMemory];
 }
 
 - (void)rightButtonClick
 {
-    [SVProgressHUD showInfoWithStatus:@"rightButtonClick"];
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
-    //[self.mm_drawerController bouncePreviewForDrawerSide:MMDrawerSideRight completion:nil];
+    SearchViewController *vc = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
@@ -198,13 +261,20 @@
         if ([urlString isEqualToString:kPandaMainViewADViewUrlString]) {
             _dataSource = returnValue;
             [_bannerView reloadData];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD setMinimumDismissTimeInterval:1];
+                [SVProgressHUD showInfoWithStatus:@"刷新成功"];
+                [self.pongRefreshControl finishedLoading];
+            });
+            
         }
         if ([urlString isEqualToString:kPandaMainListUrlString]) {
             _dataListSource = returnValue;
-            [self collectionView];
+            [self.collectionView reloadData];
         }
         
-        
+
         
     } WithErrorBlock:^(id errorCode) {
         [SVProgressHUD showErrorWithStatus:@"网络错误"];
@@ -246,7 +316,7 @@
     imageView.clipsToBounds = YES;
     imageView.frame = CGRectMake(index * kScreenWidth, 0, kScreenWidth, kScreenWidth / 2);
     imageView.contentMode = UIViewContentModeScaleToFill;
-    [imageView sd_setImageWithURL:[NSURL URLWithString:[_dataSource[index] newimg]] placeholderImage:[UIImage imageNamed:@"egopv_photo_placeholder"]];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:[_dataSource[index] newimg]] placeholderImage:[UIImage sd_animatedGIFNamed:@"loading"]];
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, self.bannerView.bounds.size.height - 25, kScreenWidth, 25)];
     label.textColor = [UIColor whiteColor];
@@ -267,5 +337,45 @@
     //[self presentViewController:pandaPlayerController animated:YES completion:nil];
 }
 
+
+
+-(UIImageView *)backgroundGifView
+{
+    if (!_backgroundGifView) {
+        UIImageView *gifView = [[UIImageView alloc]initWithImage:[UIImage sd_animatedGIFNamed:@"loading"]];
+        gifView.frame = CGRectMake(0, 64, kScreenWidth, kScreenWidth / 2);
+        [self.view addSubview:gifView];
+        _backgroundGifView = gifView;
+    }
+    
+    return _backgroundGifView;
+}
+
+
+-(BOZPongRefreshControl *)pongRefreshControl
+{
+    if (!_pongRefreshControl) {
+        _pongRefreshControl = [BOZPongRefreshControl attachToScrollView:self.collectionView withRefreshTarget:self andRefreshAction:@selector(refreshTriggered)];
+        _pongRefreshControl.backgroundColor = [UIColor whiteColor];
+        _pongRefreshControl.foregroundColor = kAppTintColor;
+    }
+    return _pongRefreshControl;
+}
+
+- (void)refreshTriggered
+{
+    [self requestADViewNetworkingWithUrlString:kPandaMainViewADViewUrlString];
+    [self requestADViewNetworkingWithUrlString:kPandaMainListUrlString];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.pongRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.pongRefreshControl scrollViewDidEndDragging];
+}
 
 @end

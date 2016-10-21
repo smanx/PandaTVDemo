@@ -77,6 +77,67 @@ static NSString * const reuseIdentifier = @"Cell";
     return self;
 }
 
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andString:(NSString *)urlString andDict:(NSDictionary *)dict
+{
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        _currentPage = 1;
+        //_allPlayer = YES;
+        self.collectionView.backgroundColor = [UIColor whiteColor];
+        
+        [self.collectionView registerNib:[UINib nibWithNibName:@"PandaMainCollectionCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+        
+        self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            _currentPage = 1;
+            [_dataArray removeAllObjects];
+            [self requstDataFromeNetworking2:urlString];
+        }];
+        self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            _currentPage ++;
+            
+            [self requstDataFromeNetworking2:urlString];
+        }];
+        _dataSource = dict[@"data"][@"items"];
+        [self.dataArray addObjectsFromArray:_dataSource];
+        [self.collectionView reloadData];
+        if (_dataSource.count < 1) {
+            [SVProgressHUD setMinimumDismissTimeInterval:1];
+            [SVProgressHUD showInfoWithStatus:@"到底啦"];
+            [self.collectionView.mj_footer endRefreshing];
+        }
+        
+        self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+    }
+    
+    
+    return self;
+}
+
+
+- (void)requstDataFromeNetworking2:(NSString *)urlsting
+{
+    
+    [[AFHTTPSessionManager manager]GET:[NSString stringWithFormat:urlsting,_currentPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [SVProgressHUD dismiss];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
+        _dataSource = responseObject[@"data"][@"items"];
+        [self.dataArray addObjectsFromArray:_dataSource];
+        [self.collectionView reloadData];
+        if (_dataSource.count < 1) {
+            [SVProgressHUD setMinimumDismissTimeInterval:1];
+            [SVProgressHUD showInfoWithStatus:@"到底啦"];
+            [self.collectionView.mj_footer endRefreshing];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+    
+}
+
+
 -(instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
 {
     self = [super initWithCollectionViewLayout:layout];
@@ -87,11 +148,6 @@ static NSString * const reuseIdentifier = @"Cell";
         
         [self.collectionView registerNib:[UINib nibWithNibName:@"PandaMainCollectionCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
         
-//        self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//            _currentPage = 1;
-//            [_dataArray removeAllObjects];
-//            [self requstDataFromeNetworking];
-//        }];
         self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
             _currentPage ++;
             
@@ -250,6 +306,17 @@ static NSString * const reuseIdentifier = @"Cell";
     return _dataArray;
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (_allPlayer) {
+        
+        if (_backBlock) {
+            _backBlock(scrollView);
+        }  
+        
+    }
+}
 
 #pragma mark <UICollectionViewDelegate>
 

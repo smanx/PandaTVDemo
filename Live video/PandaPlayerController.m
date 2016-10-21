@@ -9,11 +9,12 @@
 #import "PandaPlayerController.h"
 #import "ZFPlayerView.h"
 #import "ClassListCollectionController.h"
-@interface PandaPlayerController ()
+@interface PandaPlayerController () 
 {
     PandaADModel *_model;
     NSIndexPath *_indexPath;
     NSDictionary *_dict;
+    UICollectionView *_collectionView;
 }
 @property (nonatomic,strong)ZFPlayerView *playerView;
 @end
@@ -65,6 +66,14 @@
     [self.tabBarController.tabBar setHidden:NO];
 }
 
+-(void)loadView
+{
+    [super loadView];
+    [UIView animateWithDuration:0.01 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -111,6 +120,7 @@
 
     
     
+
     
 }
 
@@ -153,7 +163,47 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
 
     };
+    
+    vc.backBlock = ^(UIScrollView *scrollView)
+    {
+        CGFloat defaultOffsetY = -245;
+        
+        if (scrollView.contentOffset.y < -245) {
+            
+            CGFloat _currentPlayerOffsetx = (defaultOffsetY - scrollView.contentOffset.y);
+            
+            [weakSelf.playerView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(weakSelf.view).offset(-_currentPlayerOffsetx);
+                make.trailing.equalTo(weakSelf.view).offset(_currentPlayerOffsetx);
+
+                
+            }];
+            
+        }
+        if (scrollView.contentOffset.y > -200) {
+            [weakSelf.playerView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(weakSelf.view);
+                make.leading.trailing.equalTo(weakSelf.view);
+                make.height.equalTo(weakSelf.playerView.mas_width).multipliedBy(9.0f/16.0f).with.priority(750);
+            }];
+        }
+        
+        
+//        [UIView animateWithDuration:0.3 animations:^{
+//            [weakSelf.view layoutIfNeeded];
+//        }];
+
+    };
+    
     [self.view addSubview:vc.collectionView];
+    
+    _collectionView = vc.collectionView;
+    
+}
+
+-(void)updateViewConstraints
+{
+    [super updateViewConstraints];
 }
 
 -(ZFPlayerView *)playerView
@@ -201,6 +251,9 @@
     return YES;
 }
 
-
+-(void)dealloc
+{
+    NSLog(@"播放界面销毁了");
+}
 
 @end

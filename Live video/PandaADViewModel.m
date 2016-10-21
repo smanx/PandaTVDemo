@@ -36,7 +36,7 @@
 - (void)requstDataFromeNetworking
 {
     
-    [SVProgressHUD showWithStatus:@"正在加载"];
+    //[SVProgressHUD showWithStatus:@"正在加载"];
     [[AFHTTPSessionManager manager]GET:_urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self handleDataModeWithResponseObject:responseObject];
         

@@ -13,6 +13,10 @@ typedef void (^BackToPlayerController) (NSDictionary *);
 @interface ClassListCollectionController : UICollectionViewController
 
 @property (nonatomic,copy) BackToPlayerController backToPlayerController;
+
+@property (nonatomic,copy) void (^backBlock) (UIScrollView *);
+
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andDict:(NSDictionary *)dict;
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andDict2:(NSDictionary *)dict;
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andString:(NSString *)urlString andDict:(NSDictionary *)dict;;
 @end

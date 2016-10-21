@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *more;
 
 
+@property (nonatomic,copy) void (^backToController)(NSDictionary *);
+
 -(void)cellWithDataSource:(NSArray *)dataSource indexPath:(NSIndexPath *)indexPath;
 
 @end

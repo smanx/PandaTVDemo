@@ -23,6 +23,10 @@
 
 #import "ASValuePopUpView.h"
 
+@interface ASValuePopUpView () <CAAnimationDelegate>
+
+@end
+
 @implementation CALayer (ASAnimationAdditions)
 
 - (void)animateKey:(NSString *)animationName fromValue:(id)fromValue toValue:(id)toValue

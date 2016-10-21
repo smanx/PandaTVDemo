@@ -136,10 +136,7 @@ typedef NS_ENUM(NSInteger, CloseBtnStyle){
  *  设置播放视频的USRLString，可以是本地的路径也可以是http的网络路径
  */
 @property (nonatomic,copy) NSString       *URLString;
-/**
- *  跳到time处播放
- *  @param seekTime这个时刻，这个时间点
- */
+
 
 @property (nonatomic, assign) double  seekTime;
 /**

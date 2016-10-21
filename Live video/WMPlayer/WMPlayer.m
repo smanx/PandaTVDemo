@@ -78,6 +78,7 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
  */
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initWMPlayer];
 }
 /**
@@ -867,10 +868,7 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
         }
     }
 }
-/**
- *  跳到time处播放
- *  @param seekTime这个时刻，这个时间点
- */
+
 - (void)seekToTimeToPlay:(double)time{
     if (self.player&&self.player.currentItem.status == AVPlayerItemStatusReadyToPlay) {
         if (time>[self duration]) {

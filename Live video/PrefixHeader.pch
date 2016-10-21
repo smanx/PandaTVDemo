@@ -17,5 +17,9 @@
 #import "UIView+BGFrame.h"
 #import "SVProgressHUD.h"
 #import "UIImageView+WebCache.h"
-
+#import "UIImage+GIF.h"
+#import "SDImageCache.h"
+#import "JPFPSStatus.h"
+#import "UIImage+GIF.h"
+#import "CHTCollectionViewWaterfallLayout.h"
 #endif /* PrefixHeader_pch */

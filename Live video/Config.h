@@ -16,9 +16,8 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 //屏幕高度
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
 //主题颜色
-#define kAppTintColor [UIColor colorWithRed:255.0/255.0 green:85.0/255.0 blue:141.0/255.0 alpha:1.0]
+#define kAppTintColor [UIColor colorWithRed:62.0/255.0 green:216.0/255.0 blue:152.0/255.0 alpha:1.0]
 
 #define kColor [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1.0]
 //颜色
@@ -41,4 +40,6 @@
 
 #define kPandaAllUrlString @"http://api.m.panda.tv/ajax_live_lists?pageno=%ld&pagenum=10&order=person_num&status=2&banner=1&__version=2.0.1.1339&__plat=ios"
 
+#define kSearchOnlineUrlString @"http://api.m.panda.tv/ajax_search?keyword=%@&pagenum=10&status=2&__version=2.0.2.1350&__plat=ios"
+//&pageno=%ld
 #endif /* Config_h */

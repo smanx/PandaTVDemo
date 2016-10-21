@@ -101,7 +101,7 @@
 - (void)requstDataFromeNetworking
 {
     
-    [SVProgressHUD showWithStatus:@"正在加载"];
+    //[SVProgressHUD showWithStatus:@"正在加载"];
     [[AFHTTPSessionManager manager]GET:kRecreationTitleListUrlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         _titles = responseObject[@"data"];
 
@@ -120,7 +120,7 @@
 - (void)requstDataFromeNetworking:(NSString *)urlString
 {
     
-    [SVProgressHUD showWithStatus:@"正在加载"];
+    //[SVProgressHUD showWithStatus:@"正在加载"];
     [[AFHTTPSessionManager manager]GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self.dataListSource addObject:responseObject[@"data"]];
         if (_dataListSource.count == _titles.count) {
