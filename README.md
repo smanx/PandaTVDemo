@@ -1,6 +1,6 @@
 # PandaTVDemo
 ##仿熊猫直播，PandaTVDemo
-
+###数据抓取的是熊猫客户端，直播源用的是手机网页端，暂无法连接弹幕服务器。下面是效果演示和下载地址，大家一起学习交流
 
 
 ![Simulator Screen Shot 2016年10月22日 14.19.57.png](http://upload-images.jianshu.io/upload_images/3055585-f9f487b5685db785.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
