@@ -7,7 +7,7 @@
 //
 
 #import "PandaPlayerController.h"
-#import "ZFPlayerView.h"
+
 #import "ClassListCollectionController.h"
 @interface PandaPlayerController () 
 {
@@ -16,7 +16,7 @@
     NSDictionary *_dict;
     UICollectionView *_collectionView;
 }
-@property (nonatomic,strong)ZFPlayerView *playerView;
+
 @end
 
 @implementation PandaPlayerController
@@ -99,8 +99,11 @@
         self.playerView.title = _dict[@"name"];
         imageUrlString = _dict[@"pictures"][@"img"];
         [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
-        
-        urlString = [NSString stringWithFormat:kPandaRoomUrlString,_dict[@"id"]];
+        NSString *roomId = _dict[@"id"];
+        if (!roomId) {
+            roomId = _dict[@"roomid"];
+        }
+        urlString = [NSString stringWithFormat:kPandaRoomUrlString,roomId];
     }
     
     else

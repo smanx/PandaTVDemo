@@ -9,11 +9,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PandaADModel.h"
-
+#import "ZFPlayerView.h"
 @interface PandaPlayerController : UIViewController
 
 
-
+@property (nonatomic,strong)ZFPlayerView *playerView;
 - (instancetype)initWithPandaADModel:(PandaADModel *)model;
 - (instancetype)initWithPandaADModel:(PandaADModel *)model indexPath:(NSIndexPath *)indexPath;
 - (instancetype)initWithPandaWithDict:(NSDictionary *)dict;

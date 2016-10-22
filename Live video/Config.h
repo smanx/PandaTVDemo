@@ -40,6 +40,6 @@
 
 #define kPandaAllUrlString @"http://api.m.panda.tv/ajax_live_lists?pageno=%ld&pagenum=10&order=person_num&status=2&banner=1&__version=2.0.1.1339&__plat=ios"
 
-#define kSearchOnlineUrlString @"http://api.m.panda.tv/ajax_search?keyword=%@&pagenum=10&status=2&__version=2.0.2.1350&__plat=ios"
+#define kSearchOnlineUrlString @"http://api.m.panda.tv/ajax_search?keyword=%@&pageno=%ld&pagenum=10&status=2&__version=2.0.2.1350&__plat=ios"
 //&pageno=%ld
 #endif /* Config_h */

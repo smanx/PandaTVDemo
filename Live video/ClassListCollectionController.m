@@ -116,8 +116,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)requstDataFromeNetworking2:(NSString *)urlsting
 {
-    
-    [[AFHTTPSessionManager manager]GET:[NSString stringWithFormat:urlsting,_currentPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSString *urlString = [NSString stringWithFormat:urlsting,_currentPage];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    }
+    else
+    {
+        urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    [[AFHTTPSessionManager manager]GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshing];
@@ -204,7 +211,15 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)requstDataFromeNetworking
 {
 
-    [[AFHTTPSessionManager manager]GET:[NSString stringWithFormat:kPandaAllUrlString,_currentPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSString *urlString = [NSString stringWithFormat:kPandaAllUrlString,_currentPage];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    }
+    else
+    {
+        urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    [[AFHTTPSessionManager manager]GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshing];
         _dataSource = responseObject[@"data"][@"items"];
@@ -286,7 +301,13 @@ static NSString * const reuseIdentifier = @"Cell";
         PandaPlayerController *player = [[PandaPlayerController alloc]initWithPandaWithDict:_dataArray[indexPath.item]];
         [SVProgressHUD showWithStatus:@"正在加载"];
         //[self presentViewController:player animated:YES completion:nil];
-        [self.navigationController pushViewController:player animated:YES];
+        if (_backSearchController) {
+            _backSearchController(player);
+        }
+        else{
+            [self.navigationController pushViewController:player animated:YES];
+        }
+        
     }
     else
     {

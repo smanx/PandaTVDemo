@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTCollectionViewWaterfallLayout.h"
+#import "ZFPlayerView.h"
 typedef void (^BackToPlayerController) (NSDictionary *);
 
 @interface ClassListCollectionController : UICollectionViewController
@@ -15,7 +16,7 @@ typedef void (^BackToPlayerController) (NSDictionary *);
 @property (nonatomic,copy) BackToPlayerController backToPlayerController;
 
 @property (nonatomic,copy) void (^backBlock) (UIScrollView *);
-
+@property (nonatomic,copy) void (^backSearchController) (UIViewController *);
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andDict:(NSDictionary *)dict;
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andDict2:(NSDictionary *)dict;
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andString:(NSString *)urlString andDict:(NSDictionary *)dict;;

@@ -41,6 +41,9 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"pictures"][@"img"]]placeholderImage:[UIImage sd_animatedGIFNamed:@"loading"]];
     self.titleLabel.text = dict[@"name"];
     self.nickNameLabel.text = dict[@"userinfo"][@"nickName"];
+    if (!self.nickNameLabel.text) {
+        self.nickNameLabel.text = dict[@"nickname"];
+    }
     
     NSString *string = dict[@"person_num"];
 
