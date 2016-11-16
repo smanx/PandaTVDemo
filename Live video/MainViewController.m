@@ -26,7 +26,7 @@
 @property (nonatomic,strong)NSArray *dataListSource;
 @property (nonatomic,strong)ZYBannerView *bannerView;
 @property (nonatomic,weak)UICollectionView *collectionView;
-@property (nonatomic,weak)UIImageView *backgroundGifView;
+
 @property (nonatomic,strong)BOZPongRefreshControl *pongRefreshControl;
 @end
 
@@ -61,7 +61,7 @@
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
     
-    [self backgroundGifView];
+
     //[self pongRefreshControl];
     
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home_banner_bg"]];
@@ -139,7 +139,6 @@
             
             [headerView cellWithDataSource:_dataListSource indexPath:indexPath];
             [headerView addSubview:self.bannerView];
-            [self.backgroundGifView removeFromSuperview];
             reusable = headerView;
         }
         else
@@ -316,7 +315,7 @@
     imageView.clipsToBounds = YES;
     imageView.frame = CGRectMake(index * kScreenWidth, 0, kScreenWidth, kScreenWidth / 2);
     imageView.contentMode = UIViewContentModeScaleToFill;
-    [imageView sd_setImageWithURL:[NSURL URLWithString:[_dataSource[index] newimg]] placeholderImage:[UIImage sd_animatedGIFNamed:@"loading"]];
+    [imageView setImageWithURL:[NSURL URLWithString:[_dataSource[index] newimg]] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, self.bannerView.bounds.size.height - 25, kScreenWidth, 25)];
     label.textColor = [UIColor whiteColor];
@@ -339,17 +338,7 @@
 
 
 
--(UIImageView *)backgroundGifView
-{
-    if (!_backgroundGifView) {
-        UIImageView *gifView = [[UIImageView alloc]initWithImage:[UIImage sd_animatedGIFNamed:@"loading"]];
-        gifView.frame = CGRectMake(0, 64, kScreenWidth, kScreenWidth / 2);
-        [self.view addSubview:gifView];
-        _backgroundGifView = gifView;
-    }
-    
-    return _backgroundGifView;
-}
+
 
 
 -(BOZPongRefreshControl *)pongRefreshControl

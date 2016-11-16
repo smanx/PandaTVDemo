@@ -90,7 +90,7 @@
     if (_indexPath&&!_dict) {
         self.playerView.title = [_model items][_indexPath.item][@"name"];
         imageUrlString = [_model items][_indexPath.item][@"pictures"][@"img"];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
+        [imageView setImageWithURL:[NSURL URLWithString:imageUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         urlString = [NSString stringWithFormat:kPandaRoomUrlString,[_model items][_indexPath.item][@"id"]];
     }
     
@@ -98,7 +98,7 @@
     {
         self.playerView.title = _dict[@"name"];
         imageUrlString = _dict[@"pictures"][@"img"];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
+        [imageView setImageWithURL:[NSURL URLWithString:imageUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         NSString *roomId = _dict[@"id"];
         if (!roomId) {
             roomId = _dict[@"roomid"];
@@ -110,7 +110,7 @@
     {
         self.playerView.title = _model.title;
         imageUrlString = [_model newimg];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
+        [imageView setImageWithURL:[NSURL URLWithString:imageUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         
         urlString = [NSString stringWithFormat:kPandaRoomUrlString,[_model roomid]];
     }
@@ -163,7 +163,7 @@
         
         weakSelf.playerView.title = dict[@"name"];
         imageUrlString = dict[@"pictures"][@"img"];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]];
+        [imageView setImageWithURL:[NSURL URLWithString:imageUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
     };
     
